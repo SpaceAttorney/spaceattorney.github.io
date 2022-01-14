@@ -98,6 +98,17 @@ comments:
 
 paginate: 10
 
+jekyll_compose:
+  default_front_matter:
+    drafts:
+      categories: []
+      tags: []
+      img_path: /assets/img/post/
+    posts:
+      categories: []
+      tags: []
+      img_path: /assets/img/post/
+
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
