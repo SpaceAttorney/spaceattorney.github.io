@@ -103,11 +103,11 @@ jekyll_compose:
     drafts:
       categories: []
       tags: []
-      img_path: /assets/img/post/
+      img_path: /assets/img/post/2022/
     posts:
       categories: []
       tags: []
-      img_path: /assets/img/post/
+      img_path: /assets/img/post/2022/
 
 # ------------ The following options are not recommended to be modified ------------------
 
