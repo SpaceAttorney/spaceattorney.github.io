@@ -1,15 +1,22 @@
 #  The contact options.
 
 -
-  type: github
-  icon: 'fab fa-github'
+  type: itch
+  icon: 'fab fa-itch-io'
+  url: 'https://intermittent.itch.io/'
+
 -
   type: twitter
   icon: 'fab fa-twitter'
+
 -
-  type: email
-  icon: 'fas fa-envelope'
-  noblank: true            # open link in current tab
+  type: github
+  icon: 'fab fa-github'
+
+# -
+#   type: email
+#   icon: 'fas fa-envelope'
+#   noblank: true            # open link in current tab
 -
   type: rss
   icon: 'fas fa-rss'
