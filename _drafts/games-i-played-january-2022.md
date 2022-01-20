@@ -82,3 +82,5 @@ I dropped this mostly because a bug trapped me in one of the levels and I had to
 ## In Progress
 - _Umineko no Naku Koro ni_
 - _Unexplored_
+- _Death's Door_
+- _Horizon: Zero Dawn_

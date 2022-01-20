@@ -46,8 +46,9 @@ _Hunchback_ is the working title for the deductive adventure game I'm currently 
 Planned key features include:
 
 ### Open-ended deduction
-I mentioned before that "almost nothing" strikes the ideal balance of a mystery game in my experience.
+I mentioned before that "almost nothing" strikes the ideal balance of a mystery game in my experience. The best exception to this statement, IMO, is _Return of the Obra Dinn_, which is why it's my primary inspiration. For those who don't know, _Obra Dinn_ features sixty cases - one for each person on board the titular ship. For each case, you must match three things: their name, their cause of death, and the responsible party. The first is chosen from the ship's manifest; the other two are given specific drop-down menus with an exhaustive list of possible answers. Whenever you get three sets of three correct, those answers are locked in.
 
+So what about this works so well? I think I'm going to call it _strict simplicity_. Every case in the game is comprised of the same three questions, which are answered via the same three drop-down menus.
 ---
 [^1]: A playable demo incorporating every planned feature of the game.
 [^2]: One of my personal favorite Unity tutorials is _Gunpoint_ developer Tom Francis' [Make a Game in Unity With No Experience](https://www.youtube.com/playlist?list=PLUtKzyIe0aB3TZfe2wsIgJgGZW5G_NAxa). Tom basically just records himself adding features to a game, and leaves in every weird bug and experimental idea that crops up. As a result, it feels a lot more like actual gamedev than most tutorials.
