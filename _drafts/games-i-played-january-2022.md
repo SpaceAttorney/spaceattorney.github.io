@@ -2,7 +2,7 @@
 layout: post
 title: 'Games I Played: January 2022'
 categories: [Game Reviews, Monthly Roundup]
-tags: [myst, i expect you to die 2, moncage, returnal, the shivah, demon turf, bright memory infinite]
+tags: [myst, i expect you to die 2, moncage, returnal, the shivah, demon turf, bright memory infinite, vampire survivors]
 img_path: "/assets/img/post/2022/jan/roundup/"
 ---
 I play a lot of video games every year, and I expect to play a lot in 2022 as well. But am I playing _enough_?
@@ -63,6 +63,13 @@ Now that I've seen credits roll, I don't know if I'll come back to Returnal. The
 ![The Shivah promo image](shivah.jpg){: w="1920" h="1080"}
 
 This one is a short little point-and-click by Dave Gilbert of Wadjet Eye. Although I quite liked his other work, the _[Blackwell](https://store.steampowered.com/app/80330/The_Blackwell_Legacy/)_ series, I wasn't aware of the connection at first. I picked this up mostly because the idea of playing as a rabbi who could, at your discretion, talk solely in rhetorical questions gave me such strong _[Unsong](https://unsongbook.com/)_ vibes that I could not resist. I liked it, though it's a small enough game that I don't really have much to say about it.
+
+### [Vampire Survivors](https://store.steampowered.com/app/1794680/Vampire_Survivors/)
+![Vampire Survivors promo image](vampire.jpg){: w="1280" h="800" }
+
+Well, insofar as one can "complete" a roguelite. Vampire Survivors is a simple top-down action game about collecting and leveling up a set of weapons and items in the hopes that you can scrounge up a tidal wave of bullets big enough to stand against literally tens of thousands of enemies. [As Northernlion puts it](https://www.youtube.com/watch?v=9xcNiaaAzB8), "it's pure dopamine."
+
+There's not a lot of content to this right now, but at $3 there doesn't have to be. I look forward to seeing what kind of craziness ends up here.
 
 ## Dropped Games
 ### [Demon Turf](https://store.steampowered.com/app/1325900/Demon_Turf/)
