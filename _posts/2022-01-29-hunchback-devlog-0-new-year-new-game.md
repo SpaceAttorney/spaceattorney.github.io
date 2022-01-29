@@ -1,11 +1,16 @@
 ---
 layout: post
 title: 'Hunchback Devlog #0: New Year, New Game'
-categories: [Gamedev, Hunchback]
-tags: [intro, blogging, adhd]
+categories:
+- Gamedev
+- Hunchback
+tags:
+- intro
+- blogging
+- adhd
 img_path: "/assets/img/post/2022/jan/hunch0/"
+date: 2022-01-29 02:41 -0600
 ---
-
 Hello, and welcome to the official blog of Intermittent Games. This is the first in a series of posts detailing my development of deductive adventure game _Hunchback_. I'm calling this post "#0" because it's mostly an introduction to the project on a conceptual level, and to the blog as a whole. In the next post, I'll go over all the work I did before starting this blog, and from that point on it will be live.
 
 ## The Story So Far
@@ -55,7 +60,15 @@ Each case will be visually represented using a "conspiracy board" motif: a case 
 ### Fully explorable town
 Inspired by the dangerous-yet-cozy locales and memorable ensemble casts of works like _Twin Peaks_, _Gravity Falls_, and _Deadly Premonition_, _Hunchback_ takes place in Widowlake, a small hamlet in Maine. I'm targeting a time period of somewhere in the late 90s or early 2000s, though there will be some deliberate anachronisms - mostly leaning on the region's colonial history - to make the setting feel more eerie, and allow it to be smaller and more remote than it could be more realistically.
 
-The game relies on having a large number of cases to make its evidence-sorting an engaging challenge, so
+The game relies on having a large number of cases to make its evidence-sorting an engaging challenge, so I plan for each resident of the town to have an associated sidequest. This will be a lot of work no matter how it's implemented, though since each case is based on only a few questions they do not need to be particularly complex to fit the structure.
+
+### Time-bending puzzles
+Though Widowlake is, in principle, fully explorable, there will be areas and clues that the townsfolk will, understandably, be reluctant to allow access to. By solving a case, however, you will gain a **favor**, which can help you progress other cases. Different NPCs can help you in different ways, e.g. by letting you into a private area, by giving previously withheld information, or by using their expertise to analyze a piece of evidence. For each case, the player can gain a favor from either its client (as a token of gratitude) or its culprit (as hush money), though not both. This choice will help allow players multiple routes to progress.
+
+However, access to areas and clues can also be gated by **time**: each NPC has a set schedule over the course of the day, and certain scripted events might happen that change what the player is capable of. In some instances, clues will seem completely unavailable because they get locked off before the player has a chance to solve any cases. This is where the **Hunch** system comes into play. On each loop, the player can re-solve any previously solved case in a fraction of the time, simply by selecting it from a menu. This allows players to easily see alternate resolutions to a case, and it allows me as a developer to control the pacing of the game without detracting too much from the "open-world" feel it needs to have.
+
+## Conclusion
+I think that'll do for a mission statement. I plan to go into more detail on the mechanics when I get around to implementing, in large part because I expect they'll change significantly with playtesting. Next time on the devblog, I'll give a quick rundown on all the work I did prior to getting distracted by the process of setting up this website. Thanks for reading!
 
 ---
 [^1]: A playable demo incorporating every planned feature of the game.
