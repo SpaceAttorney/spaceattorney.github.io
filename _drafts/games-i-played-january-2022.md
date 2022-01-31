@@ -11,7 +11,7 @@ Never.
 
 ## Playing Games Better
 
-I've posted before about how my ADD got in the way of getting proper _work_ done, both in college and with my game, but what really tipped me over the edge in terms of seeking treatment was when I noticed that it was affecting my _leisure_ time as well. I'd get really excited about a game, buy it, and pin it to the top of my backlog for later. Then a nice long block of free time would roll around, and... I'd go back to the same games I was already used to. Sometimes I wouldn't play games at all, just mindlessly switch between Chrome tabs until I ran out of time. And the thought that ran through my mind, every time I stared longingly at the games I _wanted_ to play, games I _already owned_, was...
+I've posted [before]({% post_url 2022-01-29-hunchback-devlog-0-new-year-new-game %}) about how my ADD got in the way of getting proper _work_ done, both in college and with my game, but what really tipped me over the edge in terms of seeking treatment was when I noticed that it was affecting my _leisure_ time as well. I'd get really excited about a game, buy it, and pin it to the top of my backlog for later. Then a nice long block of free time would roll around, and... I'd go back to the same games I was already used to. Sometimes I wouldn't play games at all, just mindlessly switch between Chrome tabs until I ran out of time. And the thought that ran through my mind, every time I stared longingly at the games I _wanted_ to play, games I _already owned_, was...
 
 _"This deserves more attention than I can give it right now."_
 
