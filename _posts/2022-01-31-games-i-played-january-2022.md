@@ -1,9 +1,20 @@
 ---
 layout: post
 title: 'Games I Played: January 2022'
-categories: [Game Reviews, Monthly Roundup]
-tags: [myst, i expect you to die 2, moncage, returnal, the shivah, demon turf, bright memory infinite, vampire survivors]
+categories:
+- Game Reviews
+- Monthly Roundup
+tags:
+- myst
+- i expect you to die 2
+- moncage
+- returnal
+- the shivah
+- demon turf
+- bright memory infinite
+- vampire survivors
 img_path: "/assets/img/post/2022/jan/roundup/"
+date: 2022-01-31 23:47 -0600
 ---
 I play a lot of video games every year, and I expect to play a lot in 2022 as well. But am I playing _enough_?
 
