@@ -38,14 +38,14 @@ The important bit here is the **Behavior** attribute. I have this set to `Invoke
 Here's what this looks like in code:
 ```c#
 private void FixedUpdate()
-    {
-        myRigidbody.velocity = moveDirection * playerSpeed;
-    }
+  {
+      myRigidbody.velocity = moveDirection * playerSpeed;
+  }
 
-    public void Move(InputAction.CallbackContext context)
-    {
-        moveDirection = context.ReadValue<Vector2>();
-    }
+public void Move(InputAction.CallbackContext context)
+  {
+      moveDirection = context.ReadValue<Vector2>();
+  }
 ```
 {: file="PlayerController.cs"}
 
