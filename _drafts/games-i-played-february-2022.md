@@ -32,6 +32,11 @@ From an aesthetic perspective, the game does a fair bit better. I'm always a fan
 
 All that said, I am working through the post-game as I write this, so even though I have reservations about it and would definitely recommend playing the other games I've mentioned first, there's clearly _something_ here. The post-game in particular is pretty cool so far, although I doubt it'll inspire me to edit this entry when I wrap it up.
 
+## Dropped Games
+### Unexplored
+### Horizon: Forbidden West
+(note to self: talk about how dropping games is not about whether a game is good or bad, it's about learning to spend time wisely. The whole point of this procedure is acknowledgement that there are too many good games to play!)
+
 ## In Progess
 - _Umineko no Naku Koro ni_
 - _Elden Ring_
