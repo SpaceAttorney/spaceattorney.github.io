@@ -1,9 +1,19 @@
 ---
 layout: post
 title: 'Games I Played: February-March 2022'
-categories: [Game Reviews, Monthly Roundup]
-tags: [strange horticulture, death's door, elden ring, tunic, norco, unexplored, horizon zero dawn]
+categories:
+- Game Reviews
+- Monthly Roundup
+tags:
+- strange horticulture
+- death's door
+- elden ring
+- tunic
+- norco
+- unexplored
+- horizon zero dawn
 img_path: "/assets/img/post/2022/feb/roundup"
+date: 2022-04-07 00:03 -0500
 ---
 Welcome back to another roundup! I couldn't even make two in a row, wow! But fret not, dear reader: though I may have slacked on reviewing games, I in no way slacked on playing them. For those curious, the same holds true for _Hunchback_: I've been pretty hard at work on it, and once I reach my next goal I'll welcome the chance to switch gears and write a devblog about it. Stay tuned. For now, games!
 
@@ -33,7 +43,7 @@ From an aesthetic perspective, the game does a fair bit better. I'm always a fan
 All that said, I am working through the post-game as I write this, so even though I have reservations about it and would definitely recommend playing the other games I've mentioned first, there's clearly _something_ here. The post-game in particular is pretty cool so far, although I doubt it'll inspire me to edit this entry when I wrap it up.
 
 ### [Elden Ring](https://store.steampowered.com/app/1245620/ELDEN_RING/)
-(note: put a screenshot of your dumb character here)
+![My guy in Elden Ring](elden.jpg){: w="1920" h="1080"}
 
 The reason I didn't have this post up at the end of February is that I was on vacation for the last week of the month and couldn't get around to it. The reason I didn't have this post up at the end of March is that I was still too busy playing _Elden Ring_.
 
