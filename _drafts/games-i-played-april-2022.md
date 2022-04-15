@@ -43,6 +43,7 @@ _The Space Between_ will not be an engaging game to many people. Even within the
 
 ## In Progress
 - _Spirit Hunter: Death Mark_
+- _Hotel Dusk: Room 215_
 
 ---
 [^1]: Hell, I'd avoid even telling you it _had_ eight chapters if I thought I could keep you away from that information.
