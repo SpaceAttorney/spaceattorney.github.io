@@ -1,0 +1,895 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="day-prompt" content="days ago"><meta name="hour-prompt" content="hours ago"><meta name="minute-prompt" content="minutes ago"><meta name="justnow-prompt" content="just now"><meta name="generator" content="Jekyll v4.2.1" /><meta property="og:title" content="Hunchback Devlog #2: Who’s Graphing Now?" /><meta property="og:locale" content="en" /><meta name="description" content="Hello again! Last time on the devblog, I mentioned I’d be moving on to menu design. And, while I did do that, I quickly got sucked into a side distraction for about a month, so I’ll be devoting this entry to that instead. And so it goes." /><meta property="og:description" content="Hello again! Last time on the devblog, I mentioned I’d be moving on to menu design. And, while I did do that, I quickly got sucked into a side distraction for about a month, so I’ll be devoting this entry to that instead. And so it goes." /><link rel="canonical" href="https://spaceattorney.github.io/posts/hunchback-devlog-2-who-s-graphing-now/" /><meta property="og:url" content="https://spaceattorney.github.io/posts/hunchback-devlog-2-who-s-graphing-now/" /><meta property="og:site_name" content="Intermittent Games" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-04-19T02:54:00-05:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Hunchback Devlog #2: Who’s Graphing Now?" /><meta name="twitter:site" content="@Space_Attorney" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"mainEntityOfPage":{"@type":"WebPage","@id":"https://spaceattorney.github.io/posts/hunchback-devlog-2-who-s-graphing-now/"},"description":"Hello again! Last time on the devblog, I mentioned I’d be moving on to menu design. And, while I did do that, I quickly got sucked into a side distraction for about a month, so I’ll be devoting this entry to that instead. And so it goes.","url":"https://spaceattorney.github.io/posts/hunchback-devlog-2-who-s-graphing-now/","@type":"BlogPosting","headline":"Hunchback Devlog #2: Who’s Graphing Now?","dateModified":"2022-04-19T02:54:00-05:00","datePublished":"2022-04-19T02:54:00-05:00","@context":"https://schema.org"}</script><title>Hunchback Devlog #2: Who's Graphing Now? | Intermittent Games</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Intermittent Games"><meta name="application-name" content="Intermittent Games"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end" lang="en"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/avatars/miiupdate.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Intermittent Games</a></div><div class="site-subtitle font-italic">making games intermittently</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a><li class="nav-item"> <a href="/portfolio/" class="nav-link"> <i class="fa-fw fas fa-briefcase ml-xl-3 mr-xl-3 unloaded"></i> <span>PORTFOLIO</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://intermittent.itch.io/" aria-label="itch" target="_blank" rel="noopener"> <i class="fab fa-itch-io"></i> </a> <a href="https://twitter.com/Space_Attorney" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href="https://github.com/SpaceAttorney" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>Hunchback Devlog #2: Who's Graphing Now?</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Hunchback Devlog #2: Who's Graphing Now?</h1><div class="post-meta text-muted"><div> By <em> <a href="https://twitter.com/Space_Attorney">Apogee</a> </em></div><div class="d-flex"><div> <span> Posted <em class="timeago" date="2022-04-19 02:54:00 -0500" data-toggle="tooltip" data-placement="bottom" title="Tue, Apr 19, 2022, 2:54 AM -0500" >Apr 19</em> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="4711 words"> <em>26 min</em> read</span></div></div></div><div class="post-content"><p>Hello again! <a href="/posts/hunchback-devlog-1-the-old-to-the-new/">Last time</a> on the devblog, I mentioned I’d be moving on to menu design. And, while I did do that, I quickly got sucked into a side distraction for about a month, so I’ll be devoting this entry to that instead. And so it goes.</p><h2 id="what-happened">What Happened?<a href="#what-happened" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2><p>I started by working on the main pause menu, the one that pops up when you press the Menu key in the overworld. I still plan on giving the menu design and code its own post later, but here it is for reference:</p><p><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 842 470'%3E%3C/svg%3E" data-src="/assets/img/post/2022/apr/hunch2/office.png" alt="The main &quot;office&quot; menu" width="842" height="470" data-proofer-ignore> <em>The main pause menu. I’ve been referring to this internally as the “office menu” due to its stylization, as “main menu” makes me think of the menu that would appear when you first boot the game.</em></p><p>After setting the office menu up, I moved on to the <strong>Cases</strong> menu. This is where the action of <em>Hunchback</em> is meant to happen, so I wanted to work on it as early as possible. In fact, I was so eager to get to working on the core mechanics that I even overcame my fear of default Unity assets:</p><p><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 835 471'%3E%3C/svg%3E" data-src="/assets/img/post/2022/apr/hunch2/cases.png" alt="The Cases menu" width="835" height="471" data-proofer-ignore> <em>A case consists of up to four questions, plus identifying the culprit. Currently nothing here is functional except the return button.</em></p><p>With the mockup done, my next task was to create a sample Case for the menu to read and display. At this point, Cases were a purely theoretical construct, so I had to figure out how to translate them into readable data. This turned out to be a bit of a nightmare.</p><h3 id="distraction-1-case-data">Distraction 1: Case Data<a href="#distraction-1-case-data" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3><p>One difference I didn’t fully appreciate between <em>Hunchback</em> and its chief inspiration, <em>Return of the Obra Dinn</em>, is that my game is supposed to be filled with living NPCs that you have a reason to talk to. This required complicating the question/answer dynamic a bit. In <em>Hunchback</em>, you can interview an NPC about a <strong>question</strong> tied to a case, a piece of <strong>evidence</strong>, or another <strong>suspect</strong><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. If they have information about the topic, a <strong>detail</strong> will be added to it. This was the first source of complications for me.</p><p>Initially, I’d planned to have Cases be represented as <strong>scriptable objects</strong><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> which stored every question and answer, so the Cases menu could just read and compare them. But what happens when the player uncovers a Detail? We need some way to represent the <em>current state</em> of a Case to keep track of the Details the player has uncovered, but scriptable objects aren’t designed to be modified at runtime. Instances of regular classes don’t have this problem, but they don’t have the advantages of scriptable objects either. Eventually, I settled on having both: The <code class="language-plaintext highlighter-rouge">CaseData</code> scriptable object is where I fill in the data for each Case, and the <code class="language-plaintext highlighter-rouge">DynamicCase</code> class is where this gets integrated with the player’s progress and interpreted at runtime<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>. I spent a long time avoiding this solution because it felt like I was missing some more elegant path, but in hindsight it doesn’t really seem kludgy at all. Hopefully this reflects greater understanding on my part.</p><p>The other biggest obstacle to writing the case-related scripts was that it forced me to answer a lot of questions about the game mechanics that I’d been internally vague about up to that point. While we’re on the topic of Details, let’s discuss what they actually <em>do</em>. When I first came up with the idea it was just “extra information”, but how is that information supposed to be <em>used</em>? Let’s give an example. While investigating a Case, you find a romantic note among the victim’s possessions and add it to your Evidence drawer; however, when you present this note to a certain NPC they say they recognize the handwriting - but it’s not from the victim’s partner, and this gets appended to the evidence as a Detail. Sounds like this is the perfect evidence to answer the question “What was the motive for the crime?” But should that Detail be <em>necessary</em> before the game will accept that evidence as a valid answer?</p><p>What about Details on Questions? The reason these exist is so that simple, vague questions on a case like “How did the culprit enter the area?” can be refined through interviews - maybe somebody was on lookout, and the culprit somehow slipped by them, or perhaps someone else remembers seeing a <em>monster</em> nearby, which turns into a crucial lead. Here we’re hit with a different dilemma: Does evidence get pinned to the Question itself (necessitating only that the player provide the correct means of entry) or do some Details require their own evidence (in this case, you might need to explain what caused the “monster” illusion)?</p><p>I’m not going to tell you how I eventually answered these questions (not least because playtesting will invariably prove those answers to be dumb). What matters is that the answers informed how I needed to set up my classes, and having any answers at all was a must before I could confidently move forward on the game. I spent a week on this, including drafting an entire case to see how my theoretical framework handled it, and though it didn’t result in a single line of code I think it was well worth it to have a more solid understanding of what I want this game to be.</p><h3 id="distraction-2-dialogue-sequences">Distraction 2: Dialogue Sequences<a href="#distraction-2-dialogue-sequences" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3><p>In the last devlog, we went over the <strong>Dialogue Controller</strong>, which iterates through scriptable objects called <strong>Dialogue Events</strong> in a linear list. Creating a conversation required creating an Event for each line of dialogue, keying it with any portrait or speaker updates, and adding it to the <code class="language-plaintext highlighter-rouge">InteractionData</code> component on the relevant game object. This was fine for simple conversations, but the more I thought about Details, interviews, and the like, the more I dreaded having to write any complex interaction this way. This game is meant to be really big, eventually, so an NPC could have unique responses to dozens of interview topics. Additionally, I thought it would make sense for some conversations to change based on certain parameters (like whether the player has solved that NPC’s case or acquired certain Details), and such a nonlinearity would be a nightmare to set up in the current system if it was possible at all.</p><p>This is where I started looking into custom editors. And this is where the last three weeks of my life went.</p><h2 id="the-dialogue-editor">The Dialogue Editor<a href="#the-dialogue-editor" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2><p>What I wanted out of a hypothetical Dialogue Editor would look a lot like a state machine or flowchart: I wanted to be able to place Dialogue Events on the window and connect them into a sequence, with the ability to branch off into different paths depending on the values of external variables. I figured all this would be possible, since it wouldn’t be too dissimilar to Unity’s built-in <strong>Animator</strong> function.</p><p><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 497 353'%3E%3C/svg%3E" data-src="/assets/img/post/2022/apr/hunch2/animator.png" alt="The Unity Animator window" width="497" height="353" data-proofer-ignore> <em>The animation flowchart for Constance’s movement. The arrows transition between “moving” and “idle” depending on the value of a boolean set by <code class="language-plaintext highlighter-rouge">PlayerController</code>.</em></p><p>And this was <em>kind of</em> correct. Although the guts of the Animator window aren’t accessible for me to copy directly, the experimental <strong>GraphView</strong> library has much of the same functionality buried within it<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>. I hadn’t worked with either custom editors or experimental libraries before, so I was way in over my head. I tried out every online resource I could get my hands on, but most of the non-original work I ended up with came from <a href="https://www.youtube.com/playlist?list=PLF3U0rzFKlTGzz-AUFacf9_OKiW_hGYIR">this tutorial series</a>, which IIRC was itself a combination of an entire Unity Forum thread’s worth of insights. I recommend checking that out if you’re interested, as this post is long enough without trying to rehash it.</p><p>We start with <code class="language-plaintext highlighter-rouge">DialogTree</code><sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>, a scriptable object containing a list of other scriptable objects of type <code class="language-plaintext highlighter-rouge">NodeData</code>. What happens when we open it?</p><h3 id="loading-trees">Loading Trees<a href="#loading-trees" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3><p>First, the tree is opened:</p><div file="GraphSaveUtility.cs" class="language-c# highlighter-rouge"><div class="code-header"> <span label-text="GraphSaveUtility.cs"><i class="far fa-file-code"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="p">[</span><span class="nf">OnOpenAsset</span><span class="p">(</span><span class="m">1</span><span class="p">)]</span>
+<span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">OpenDialogTree</span><span class="p">(</span><span class="kt">int</span> <span class="n">instanceID</span><span class="p">,</span> <span class="kt">int</span> <span class="n">line</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Find the game object with this ID and ensure it is a Dialogue Tree</span>
+    <span class="n">DialogTree</span> <span class="n">dialogTree</span> <span class="p">=</span> <span class="n">EditorUtility</span><span class="p">.</span><span class="nf">InstanceIDToObject</span><span class="p">(</span><span class="n">instanceID</span><span class="p">)</span> <span class="k">as</span> <span class="n">DialogTree</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">dialogTree</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nf">LoadGraph</span><span class="p">(</span><span class="n">dialogTree</span><span class="p">);</span>
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>This method catches any asset we try to open, attempts to cast it as a <code class="language-plaintext highlighter-rouge">DialogTree</code>, and if successful passes it to the rest of the script. Returning <code class="language-plaintext highlighter-rouge">true</code> indicates that the file is properly open and Unity can stop trying to do it some other way.</p><div file="GraphSaveUtility.cs" class="language-c# highlighter-rouge"><div class="code-header"> <span label-text="GraphSaveUtility.cs"><i class="far fa-file-code"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+</pre><td class="rouge-code"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">LoadGraph</span><span class="p">(</span><span class="n">DialogTree</span> <span class="n">dialogTree</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Add a start node to newly created (i.e. empty) dialogue trees</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">startNode</span> <span class="p">=</span> <span class="n">ScriptableObject</span><span class="p">.</span><span class="n">CreateInstance</span><span class="p">&lt;</span><span class="n">NodeData</span><span class="p">&gt;();</span>
+        <span class="n">startNode</span><span class="p">.</span><span class="n">nodeID</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">().</span><span class="nf">ToString</span><span class="p">();</span>
+        <span class="n">startNode</span><span class="p">.</span><span class="n">portIDs</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span>
+        <span class="p">{</span>
+            <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">().</span><span class="nf">ToString</span><span class="p">()</span>
+        <span class="p">};</span>
+        <span class="n">startNode</span><span class="p">.</span><span class="n">inputPorts</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+        <span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">startNode</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Open editor window and obtain associated GraphView</span>
+    <span class="n">DialogEditorWindow</span> <span class="n">window</span> <span class="p">=</span> <span class="n">DialogEditorWindow</span><span class="p">.</span><span class="nf">ShowWindow</span><span class="p">();</span>
+    <span class="n">DialogGraphView</span> <span class="n">graphView</span> <span class="p">=</span> <span class="n">window</span><span class="p">.</span><span class="nf">GetGraphView</span><span class="p">();</span>
+
+    <span class="c1">// Clear graph of existing contents</span>
+    <span class="n">graphView</span><span class="p">.</span><span class="nf">DeleteElements</span><span class="p">(</span><span class="n">graphView</span><span class="p">.</span><span class="n">graphElements</span><span class="p">.</span><span class="nf">ToList</span><span class="p">());</span>
+
+    <span class="c1">// Add nodes to graph</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="n">NodeData</span> <span class="n">n</span> <span class="k">in</span> <span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">graphView</span><span class="p">.</span><span class="nf">LoadNode</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Restore connections between nodes</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="n">NodeData</span> <span class="n">n</span> <span class="k">in</span> <span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Ignore if the node has no connections</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">inputPorts</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Find the node associated with this data file</span>
+        <span class="n">TK_Node</span> <span class="n">activeNode</span> <span class="p">=</span> <span class="n">graphView</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">ToList</span><span class="p">().</span><span class="nf">Find</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="n">x</span> <span class="k">as</span> <span class="n">TK_Node</span><span class="p">).</span><span class="n">nodeID</span> <span class="p">==</span> <span class="n">n</span><span class="p">.</span><span class="n">nodeID</span><span class="p">)</span> <span class="k">as</span> <span class="n">TK_Node</span><span class="p">;</span>
+
+        <span class="c1">// Find this node's input port</span>
+        <span class="n">Port</span> <span class="n">endPort</span> <span class="p">=</span> <span class="p">(</span><span class="n">Port</span><span class="p">)</span><span class="n">activeNode</span><span class="p">.</span><span class="n">inputContainer</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+
+        <span class="c1">// Review each of this port's connections</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">string</span> <span class="n">inputID</span> <span class="k">in</span> <span class="n">n</span><span class="p">.</span><span class="n">inputPorts</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Find the port that corresponds with this ID</span>
+            <span class="n">TK_Node</span> <span class="n">inputNode</span> <span class="p">=</span> <span class="p">(</span><span class="n">TK_Node</span><span class="p">)</span><span class="n">graphView</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">ToList</span><span class="p">().</span><span class="nf">Find</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="n">x</span> <span class="k">as</span> <span class="n">TK_Node</span><span class="p">).</span><span class="n">portIDs</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">inputID</span><span class="p">));</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">inputNode</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="s">"Could not find input node."</span><span class="p">);</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">inputPortIndex</span> <span class="p">=</span> <span class="n">inputNode</span><span class="p">.</span><span class="n">portIDs</span><span class="p">.</span><span class="nf">FindIndex</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">==</span> <span class="n">inputID</span><span class="p">);</span>
+                <span class="n">Port</span> <span class="n">startPort</span> <span class="p">=</span> <span class="p">(</span><span class="n">Port</span><span class="p">)</span><span class="n">inputNode</span><span class="p">.</span><span class="n">outputContainer</span><span class="p">[</span><span class="n">inputPortIndex</span><span class="p">];</span>
+
+                <span class="c1">// Connect active port to its input</span>
+                <span class="n">Edge</span> <span class="n">newEdge</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Edge</span>
+                <span class="p">{</span>
+                    <span class="n">output</span> <span class="p">=</span> <span class="n">startPort</span><span class="p">,</span>
+                    <span class="n">input</span> <span class="p">=</span> <span class="n">endPort</span>
+                <span class="p">};</span>
+                <span class="n">newEdge</span><span class="p">.</span><span class="n">input</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="n">newEdge</span><span class="p">);</span>
+                <span class="n">newEdge</span><span class="p">.</span><span class="n">output</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="n">newEdge</span><span class="p">);</span>
+                <span class="n">graphView</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">newEdge</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Remove any nodes in the folder that are not represented in the tree</span>
+    <span class="kt">string</span> <span class="n">filePath</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">GetAssetPath</span><span class="p">(</span><span class="n">dialogTree</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="n">assetName</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="nf">GetFileNameWithoutExtension</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="n">nodeFolder</span> <span class="p">=</span> <span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="nf">GetDirectoryName</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span> <span class="p">+</span> <span class="s">"/"</span> <span class="p">+</span> <span class="n">assetName</span> <span class="p">+</span> <span class="s">" Nodes"</span><span class="p">);</span>
+    <span class="kt">string</span><span class="p">[]</span> <span class="n">nodes</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">FindAssets</span><span class="p">(</span><span class="s">"t: NodeData"</span><span class="p">,</span> <span class="k">new</span><span class="p">[]</span> <span class="p">{</span> <span class="n">nodeFolder</span> <span class="p">});</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="kt">string</span> <span class="n">assetID</span> <span class="k">in</span> <span class="n">nodes</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">string</span> <span class="n">assetPath</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">GUIDToAssetPath</span><span class="p">(</span><span class="n">assetID</span><span class="p">);</span>
+        <span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span> <span class="n">asset</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">LoadAssetAtPath</span><span class="p">(</span><span class="n">assetPath</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NodeData</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(!</span><span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">asset</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">DeleteAsset</span><span class="p">(</span><span class="n">assetPath</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Set filename in editor window</span>
+    <span class="n">window</span><span class="p">.</span><span class="nf">SetFilename</span><span class="p">(</span><span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">GetAssetPath</span><span class="p">(</span><span class="n">dialogTree</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Let’s go through this bit by bit:</p><div file="GraphSaveUtility.cs" class="language-c# highlighter-rouge"><div class="code-header"> <span label-text="GraphSaveUtility.cs"><i class="far fa-file-code"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="c1">// Add a start node to newly created (i.e. empty) dialogue trees</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">startNode</span> <span class="p">=</span> <span class="n">ScriptableObject</span><span class="p">.</span><span class="n">CreateInstance</span><span class="p">&lt;</span><span class="n">NodeData</span><span class="p">&gt;();</span>
+    <span class="n">startNode</span><span class="p">.</span><span class="n">nodeID</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">().</span><span class="nf">ToString</span><span class="p">();</span>
+    <span class="n">startNode</span><span class="p">.</span><span class="n">portIDs</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span>
+    <span class="p">{</span>
+        <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">().</span><span class="nf">ToString</span><span class="p">()</span>
+    <span class="p">};</span>
+    <span class="n">startNode</span><span class="p">.</span><span class="n">inputPorts</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+    <span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">startNode</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>There are two ways to create a new Tree: from the main Editor, using Unity’s <code class="language-plaintext highlighter-rouge">CreateAssetMenu</code> attribute; or by constructing and saving it from the Dialogue Editor window. Doing it the second way gives it a Start node, while the first way leaves the Tree’s node list empty, so this code brings the two into parity.</p><div file="GraphSaveUtility.cs" class="language-c# highlighter-rouge"><div class="code-header"> <span label-text="GraphSaveUtility.cs"><i class="far fa-file-code"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="c1">// Open editor window and obtain associated GraphView</span>
+<span class="n">DialogEditorWindow</span> <span class="n">window</span> <span class="p">=</span> <span class="n">DialogEditorWindow</span><span class="p">.</span><span class="nf">ShowWindow</span><span class="p">();</span>
+<span class="n">DialogGraphView</span> <span class="n">graphView</span> <span class="p">=</span> <span class="n">window</span><span class="p">.</span><span class="nf">GetGraphView</span><span class="p">();</span>
+
+<span class="c1">// Clear graph of existing contents</span>
+<span class="n">graphView</span><span class="p">.</span><span class="nf">DeleteElements</span><span class="p">(</span><span class="n">graphView</span><span class="p">.</span><span class="n">graphElements</span><span class="p">.</span><span class="nf">ToList</span><span class="p">());</span>
+
+<span class="c1">// Add nodes to graph</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="n">NodeData</span> <span class="n">n</span> <span class="k">in</span> <span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">graphView</span><span class="p">.</span><span class="nf">LoadNode</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>To explain these, we’ll have to jump over to some other scripts. <code class="language-plaintext highlighter-rouge">DialogEditorWindow</code> is broadly the same as in the tutorial, so I’ll skip it for now; just know that <code class="language-plaintext highlighter-rouge">ShowWindow()</code> opens and/or focuses the window as necessary, and <code class="language-plaintext highlighter-rouge">GetGraphView()</code> returns an object of type <code class="language-plaintext highlighter-rouge">GraphView</code>, which contains all of the data that’s represented in the window. Then the contents of the graph are deleted so that we only see the Tree we’re loading in<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>. Now, here’s what <code class="language-plaintext highlighter-rouge">LoadNode()</code> looks like:</p><div file="DialogGraphView.cs" class="language-c# highlighter-rouge"><div class="code-header"> <span label-text="DialogGraphView.cs"><i class="far fa-file-code"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+</pre><td class="rouge-code"><pre><span class="k">public</span> <span class="k">void</span> <span class="nf">LoadNode</span><span class="p">(</span><span class="n">NodeData</span> <span class="n">nodeData</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">nodeData</span> <span class="k">is</span> <span class="n">DialogNodeData</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Handle dialogue nodes</span>
+        <span class="n">DialogNodeData</span> <span class="n">n</span> <span class="p">=</span> <span class="n">nodeData</span> <span class="k">as</span> <span class="n">DialogNodeData</span><span class="p">;</span>
+
+        <span class="n">DialogNode</span> <span class="n">newNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DialogNode</span>
+        <span class="p">{</span>
+            <span class="n">nodeID</span> <span class="p">=</span> <span class="n">n</span><span class="p">.</span><span class="n">nodeID</span><span class="p">,</span>
+            <span class="n">portIDs</span> <span class="p">=</span> <span class="n">n</span><span class="p">.</span><span class="n">portIDs</span><span class="p">,</span>
+            <span class="n">position</span> <span class="p">=</span> <span class="n">n</span><span class="p">.</span><span class="n">position</span><span class="p">,</span>
+
+            <span class="n">dialogText</span> <span class="p">=</span> <span class="n">n</span><span class="p">.</span><span class="n">dialogText</span><span class="p">,</span>
+            <span class="n">speakerText</span> <span class="p">=</span> <span class="n">n</span><span class="p">.</span><span class="n">speakerText</span><span class="p">,</span>
+            <span class="n">leftPortrait</span> <span class="p">=</span> <span class="n">n</span><span class="p">.</span><span class="n">leftPortrait</span><span class="p">,</span>
+            <span class="n">rightPortrait</span> <span class="p">=</span> <span class="n">n</span><span class="p">.</span><span class="n">rightPortrait</span>
+        <span class="p">};</span>
+        <span class="c1">// Debug.Log("Dialogue box should say " + newNode.dialogText);</span>
+
+        <span class="nf">AddDialogNode</span><span class="p">(</span><span class="n">newNode</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// By elimination, node must be a Start Node</span>
+        <span class="nf">AddElement</span><span class="p">(</span><span class="nf">GenerateStartNode</span><span class="p">(</span><span class="n">nodeData</span><span class="p">.</span><span class="n">nodeID</span><span class="p">,</span> <span class="n">nodeData</span><span class="p">.</span><span class="n">portIDs</span><span class="p">[</span><span class="m">0</span><span class="p">]));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">void</span> <span class="nf">AddDialogNode</span><span class="p">(</span><span class="n">DialogNode</span> <span class="n">newNode</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Generate input port</span>
+    <span class="n">Port</span> <span class="n">inputPort</span> <span class="p">=</span> <span class="nf">GeneratePort</span><span class="p">(</span><span class="n">newNode</span><span class="p">,</span> <span class="n">Direction</span><span class="p">.</span><span class="n">Input</span><span class="p">);</span>
+    <span class="n">inputPort</span><span class="p">.</span><span class="n">portName</span> <span class="p">=</span> <span class="s">"Prev"</span><span class="p">;</span>
+    <span class="n">newNode</span><span class="p">.</span><span class="n">inputContainer</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">inputPort</span><span class="p">);</span>
+
+    <span class="c1">// Generate output port</span>
+    <span class="n">Port</span> <span class="n">outputPort</span> <span class="p">=</span> <span class="nf">GeneratePort</span><span class="p">(</span><span class="n">newNode</span><span class="p">,</span> <span class="n">Direction</span><span class="p">.</span><span class="n">Output</span><span class="p">);</span>
+    <span class="n">outputPort</span><span class="p">.</span><span class="n">portName</span> <span class="p">=</span> <span class="s">"Next"</span><span class="p">;</span>
+    <span class="n">newNode</span><span class="p">.</span><span class="n">outputContainer</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">outputPort</span><span class="p">);</span>
+
+    <span class="c1">// Generate text field for dialogue line and have it update on editor input</span>
+    <span class="n">TextField</span> <span class="n">dialogField</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">TextField</span><span class="p">();</span>
+    <span class="n">dialogField</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">"DialogLine"</span><span class="p">;</span>
+    <span class="n">dialogField</span><span class="p">.</span><span class="n">label</span> <span class="p">=</span> <span class="s">"Dialogue Line"</span><span class="p">;</span>
+    <span class="n">dialogField</span><span class="p">.</span><span class="n">multiline</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+    <span class="n">dialogField</span><span class="p">.</span><span class="k">value</span> <span class="p">=</span> <span class="n">newNode</span><span class="p">.</span><span class="n">dialogText</span><span class="p">;</span>
+    <span class="n">dialogField</span><span class="p">.</span><span class="nf">RegisterValueChangedCallback</span><span class="p">(</span><span class="n">evt</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">newNode</span><span class="p">.</span><span class="n">dialogText</span> <span class="p">=</span> <span class="n">evt</span><span class="p">.</span><span class="n">newValue</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="n">newNode</span><span class="p">.</span><span class="n">mainContainer</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">dialogField</span><span class="p">);</span>
+
+    <span class="c1">// Generate button for adding new Dialogue Event fields</span>
+    <span class="kt">var</span> <span class="n">newFieldButton</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Button</span><span class="p">(</span><span class="n">clickEvent</span><span class="p">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nf">DisplayEventFieldMenu</span><span class="p">(</span><span class="n">newNode</span><span class="p">);</span> <span class="p">});</span>
+    <span class="n">newFieldButton</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">"+"</span><span class="p">;</span>
+    <span class="n">newNode</span><span class="p">.</span><span class="n">titleButtonContainer</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">newFieldButton</span><span class="p">);</span>
+
+    <span class="c1">// Add other fields, conditional on their existence</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">newNode</span><span class="p">.</span><span class="n">speakerText</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="nf">AddSpeakerChange</span><span class="p">(</span><span class="n">newNode</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">newNode</span><span class="p">.</span><span class="n">leftPortrait</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nf">AddLPortraitChange</span><span class="p">(</span><span class="n">newNode</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">newNode</span><span class="p">.</span><span class="n">rightPortrait</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nf">AddRPortraitChange</span><span class="p">(</span><span class="n">newNode</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Add stylesheet to node</span>
+    <span class="n">newNode</span><span class="p">.</span><span class="n">styleSheets</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">Resources</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">StyleSheet</span><span class="p">&gt;(</span><span class="s">"Editor/Node"</span><span class="p">));</span>
+
+    <span class="c1">// Display dialogue node on graph</span>
+    <span class="n">newNode</span><span class="p">.</span><span class="n">title</span> <span class="p">=</span> <span class="s">"Dialogue Event"</span><span class="p">;</span>
+    <span class="n">newNode</span><span class="p">.</span><span class="nf">RefreshExpandedState</span><span class="p">();</span>
+    <span class="n">newNode</span><span class="p">.</span><span class="nf">RefreshPorts</span><span class="p">();</span>
+    <span class="n">newNode</span><span class="p">.</span><span class="nf">SetPosition</span><span class="p">(</span><span class="k">new</span> <span class="nf">Rect</span><span class="p">(</span><span class="n">newNode</span><span class="p">.</span><span class="n">position</span><span class="p">,</span> <span class="n">defaultNodeSize</span><span class="p">));</span>
+    <span class="nf">AddElement</span><span class="p">(</span><span class="n">newNode</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="n">TK_Node</span> <span class="nf">GenerateStartNode</span><span class="p">(</span><span class="kt">string</span> <span class="n">nodeID</span><span class="p">,</span> <span class="kt">string</span> <span class="n">portID</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Initialize node</span>
+    <span class="kt">var</span> <span class="n">node</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TK_Node</span>
+    <span class="p">{</span>
+        <span class="n">nodeID</span> <span class="p">=</span> <span class="n">nodeID</span><span class="p">,</span>
+        <span class="n">title</span> <span class="p">=</span> <span class="s">"Start"</span><span class="p">,</span>
+        <span class="n">portIDs</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span>
+        <span class="p">{</span>
+            <span class="n">portID</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="c1">// Add output port</span>
+    <span class="kt">var</span> <span class="n">outputPort</span> <span class="p">=</span> <span class="nf">GeneratePort</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">Direction</span><span class="p">.</span><span class="n">Output</span><span class="p">);</span>
+    <span class="n">outputPort</span><span class="p">.</span><span class="n">portName</span> <span class="p">=</span> <span class="s">""</span><span class="p">;</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">outputContainer</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">outputPort</span><span class="p">);</span>
+
+    <span class="c1">// Prevent this port from being moved or deleted</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">capabilities</span> <span class="p">&amp;=</span> <span class="p">~</span><span class="n">Capabilities</span><span class="p">.</span><span class="n">Movable</span><span class="p">;</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">capabilities</span> <span class="p">&amp;=</span> <span class="p">~</span><span class="n">Capabilities</span><span class="p">.</span><span class="n">Deletable</span><span class="p">;</span>
+
+    <span class="c1">// Reset layout of node</span>
+    <span class="n">node</span><span class="p">.</span><span class="nf">RefreshExpandedState</span><span class="p">();</span>
+    <span class="n">node</span><span class="p">.</span><span class="nf">RefreshPorts</span><span class="p">();</span>
+
+    <span class="c1">// Set default node position</span>
+    <span class="n">node</span><span class="p">.</span><span class="nf">SetPosition</span><span class="p">(</span><span class="k">new</span> <span class="nf">Rect</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">150</span><span class="p">));</span>
+
+    <span class="k">return</span> <span class="n">node</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>For each node in the Tree, <code class="language-plaintext highlighter-rouge">LoadNode()</code> checks what kind of node data it’s reading and adds a corresponding node to the graph<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>. Right now, there’s only one subclass of <code class="language-plaintext highlighter-rouge">NodeData</code>, but in the future I’ll need extra node types, which is why the method is structured the way it is.</p><p><code class="language-plaintext highlighter-rouge">GenerateStartNode()</code> works the same as in the tutorial. <code class="language-plaintext highlighter-rouge">AddDialogNode()</code> works similarly, except instead of adding choices and output nodes, the button in the corner adds extra fields corresponding to the same extra event features as the old system (speaker and portrait updates). Since the fields are invisible to begin with, it’s easier to tell at a glance which dialogue events do or do not have these features.</p><p><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1100 212'%3E%3C/svg%3E" data-src="/assets/img/post/2022/apr/hunch2/graph.png" alt="A tree seen in the Dialogue Editor" width="1100" height="212" data-proofer-ignore> <em>A short test interaction, as seen in the Dialogue Editor.</em></p><p>Once the nodes are in place, it’s time to connect them:</p><div class="language-c# highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre><td class="rouge-code"><pre><span class="c1">// Restore connections between nodes</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="n">NodeData</span> <span class="n">n</span> <span class="k">in</span> <span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Ignore if the node has no connections</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">inputPorts</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Find the node associated with this data file</span>
+    <span class="n">TK_Node</span> <span class="n">activeNode</span> <span class="p">=</span> <span class="n">graphView</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">ToList</span><span class="p">().</span><span class="nf">Find</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="n">x</span> <span class="k">as</span> <span class="n">TK_Node</span><span class="p">).</span><span class="n">nodeID</span> <span class="p">==</span> <span class="n">n</span><span class="p">.</span><span class="n">nodeID</span><span class="p">)</span> <span class="k">as</span> <span class="n">TK_Node</span><span class="p">;</span>
+
+    <span class="c1">// Find this node's input port</span>
+    <span class="n">Port</span> <span class="n">endPort</span> <span class="p">=</span> <span class="p">(</span><span class="n">Port</span><span class="p">)</span><span class="n">activeNode</span><span class="p">.</span><span class="n">inputContainer</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+
+    <span class="c1">// Review each of this port's connections</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="kt">string</span> <span class="n">inputID</span> <span class="k">in</span> <span class="n">n</span><span class="p">.</span><span class="n">inputPorts</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Find the port that corresponds with this ID</span>
+        <span class="n">TK_Node</span> <span class="n">inputNode</span> <span class="p">=</span> <span class="p">(</span><span class="n">TK_Node</span><span class="p">)</span><span class="n">graphView</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">ToList</span><span class="p">().</span><span class="nf">Find</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="n">x</span> <span class="k">as</span> <span class="n">TK_Node</span><span class="p">).</span><span class="n">portIDs</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">inputID</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">inputNode</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="s">"Could not find input node."</span><span class="p">);</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">inputPortIndex</span> <span class="p">=</span> <span class="n">inputNode</span><span class="p">.</span><span class="n">portIDs</span><span class="p">.</span><span class="nf">FindIndex</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">==</span> <span class="n">inputID</span><span class="p">);</span>
+            <span class="n">Port</span> <span class="n">startPort</span> <span class="p">=</span> <span class="p">(</span><span class="n">Port</span><span class="p">)</span><span class="n">inputNode</span><span class="p">.</span><span class="n">outputContainer</span><span class="p">[</span><span class="n">inputPortIndex</span><span class="p">];</span>
+
+            <span class="c1">// Connect active port to its input</span>
+            <span class="n">Edge</span> <span class="n">newEdge</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Edge</span>
+            <span class="p">{</span>
+                <span class="n">output</span> <span class="p">=</span> <span class="n">startPort</span><span class="p">,</span>
+                <span class="n">input</span> <span class="p">=</span> <span class="n">endPort</span>
+            <span class="p">};</span>
+            <span class="n">newEdge</span><span class="p">.</span><span class="n">input</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="n">newEdge</span><span class="p">);</span>
+            <span class="n">newEdge</span><span class="p">.</span><span class="n">output</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="n">newEdge</span><span class="p">);</span>
+            <span class="n">graphView</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">newEdge</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>In the tutorial, Edges (the connections between nodes) are serialized separately. I ran into problems with serialization that I could only solve if every Node in a Tree was also saved as its own scriptable object, and I didn’t want to have to do the same for Edges, so I had to make my own method. In my version, each Node has two string Lists for GUIDs - <code class="language-plaintext highlighter-rouge">portIDs</code> has IDs corresponding to each of the node’s own output ports, while <code class="language-plaintext highlighter-rouge">inputPorts</code> lists the IDs of the ports that connect to the node’s input port. This loop takes every ID in each node’s <code class="language-plaintext highlighter-rouge">inputPorts</code> list, finds the matching ID from the other nodes’ <code class="language-plaintext highlighter-rouge">portIDs</code> lists, and then creates the associated Edge<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>.</p><div class="language-c# highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="c1">// Remove any nodes in the folder that are not represented in the tree</span>
+<span class="kt">string</span> <span class="n">filePath</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">GetAssetPath</span><span class="p">(</span><span class="n">dialogTree</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">assetName</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="nf">GetFileNameWithoutExtension</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">nodeFolder</span> <span class="p">=</span> <span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="nf">GetDirectoryName</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span> <span class="p">+</span> <span class="s">"/"</span> <span class="p">+</span> <span class="n">assetName</span> <span class="p">+</span> <span class="s">" Nodes"</span><span class="p">);</span>
+<span class="kt">string</span><span class="p">[]</span> <span class="n">nodes</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">FindAssets</span><span class="p">(</span><span class="s">"t: NodeData"</span><span class="p">,</span> <span class="k">new</span><span class="p">[]</span> <span class="p">{</span> <span class="n">nodeFolder</span> <span class="p">});</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">string</span> <span class="n">assetID</span> <span class="k">in</span> <span class="n">nodes</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">string</span> <span class="n">assetPath</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">GUIDToAssetPath</span><span class="p">(</span><span class="n">assetID</span><span class="p">);</span>
+    <span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span> <span class="n">asset</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">LoadAssetAtPath</span><span class="p">(</span><span class="n">assetPath</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">NodeData</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">asset</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">DeleteAsset</span><span class="p">(</span><span class="n">assetPath</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Set filename in editor window</span>
+<span class="n">window</span><span class="p">.</span><span class="nf">SetFilename</span><span class="p">(</span><span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">GetAssetPath</span><span class="p">(</span><span class="n">dialogTree</span><span class="p">));</span>
+</pre></table></code></div></div><p>In the saving function, which we’ll see later, each Node in a Tree is saved as its own scriptable object in a folder which is auto-created based on the Tree’s filename. Since Nodes in the editor window are just graphic representations, deleting one doesn’t do anything to its associated data file. To prevent the folder from getting bloated with unused assets, we delete them here<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>.</p><p>Lastly, loading sets the filename in the window’s toolbar. In the tutorial, this toolbar contained a text field where you could enter a filename for a Tree to have when it was saved. This method prescribes that every Tree be saved in a specific folder, though, which isn’t what I want: I’m going to have a <em>ton</em> of these things, and I’d prefer to be able to organize them at my discretion. In my version, the text field is read-only, and only set when an asset is loaded or saved.</p><h3 id="saving-trees">Saving Trees<a href="#saving-trees" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3><p>When the “Save” button is pressed, this happens:</p><div file="DialogEditorWindow.cs" class="language-c# highlighter-rouge"><div class="code-header"> <span label-text="DialogEditorWindow.cs"><i class="far fa-file-code"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="k">private</span> <span class="k">void</span> <span class="nf">SaveGraph</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// If it is a new graph, bring up the save window to determine a file path.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">_filePath</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="kt">string</span> <span class="n">absPath</span> <span class="p">=</span> <span class="n">EditorUtility</span><span class="p">.</span><span class="nf">SaveFilePanel</span><span class="p">(</span><span class="s">"Save graph to new asset"</span><span class="p">,</span> <span class="s">"Assets/Interactables"</span><span class="p">,</span> <span class="s">"New Tree.asset"</span><span class="p">,</span> <span class="s">"asset"</span><span class="p">);</span>
+
+        <span class="c1">// The Save Window returns an absolute path, so we convert it to a relative path before continuing</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">absPath</span><span class="p">.</span><span class="nf">StartsWith</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">dataPath</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">_filePath</span> <span class="p">=</span> <span class="s">"Assets"</span> <span class="p">+</span> <span class="n">absPath</span><span class="p">.</span><span class="nf">Substring</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">dataPath</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Save the asset</span>
+    <span class="n">GraphSaveUtility</span><span class="p">.</span><span class="nf">SaveGraph</span><span class="p">(</span><span class="n">_graphView</span><span class="p">,</span> <span class="n">_filePath</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>It’s possible to bring up the Dialogue Editor without an asset loaded. In this case, the toolbar simply displays “New Asset” in place of the file name. The first thing the save function does is check for this case. While the tutorial just throws an exception in the case of a lacking file name, I use the <code class="language-plaintext highlighter-rouge">EditorUtility</code> library to bring up a save window, allowing the user to save their new asset wherever they want. This library returns a full filepath, whereas most Unity functions use partial filepaths starting with the project’s “Assets” folder, so we have to do some mangling to convert the two. When that’s done, we move on to the bigger function.</p><div file="GraphSaveUtility.cs" class="language-c# highlighter-rouge"><div class="code-header"> <span label-text="GraphSaveUtility.cs"><i class="far fa-file-code"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+</pre><td class="rouge-code"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">SaveGraph</span><span class="p">(</span><span class="n">DialogGraphView</span> <span class="n">graphView</span><span class="p">,</span> <span class="kt">string</span> <span class="n">filePath</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Initialize Dialogue Tree</span>
+    <span class="kt">var</span> <span class="n">dialogTree</span> <span class="p">=</span> <span class="n">ScriptableObject</span><span class="p">.</span><span class="n">CreateInstance</span><span class="p">&lt;</span><span class="n">DialogTree</span><span class="p">&gt;();</span>
+    <span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">NodeData</span><span class="p">&gt;();</span>
+
+    <span class="c1">// Grab list of edges</span>
+    <span class="kt">var</span> <span class="n">edges</span> <span class="p">=</span> <span class="n">graphView</span><span class="p">.</span><span class="n">edges</span><span class="p">.</span><span class="nf">ToList</span><span class="p">();</span>
+
+    <span class="c1">// Grab nodes from graph</span>
+    <span class="k">foreach</span><span class="p">(</span><span class="n">TK_Node</span> <span class="n">n</span> <span class="k">in</span> <span class="n">graphView</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">ToList</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// Write master parameters</span>
+        <span class="kt">var</span> <span class="n">tkData</span> <span class="p">=</span> <span class="n">ScriptableObject</span><span class="p">.</span><span class="n">CreateInstance</span><span class="p">&lt;</span><span class="n">NodeData</span><span class="p">&gt;();</span>
+        <span class="n">tkData</span><span class="p">.</span><span class="n">nodeID</span> <span class="p">=</span> <span class="n">n</span><span class="p">.</span><span class="n">nodeID</span><span class="p">;</span>
+        <span class="n">tkData</span><span class="p">.</span><span class="n">portIDs</span> <span class="p">=</span> <span class="n">n</span><span class="p">.</span><span class="n">portIDs</span><span class="p">;</span>
+        <span class="n">tkData</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">n</span><span class="p">.</span><span class="nf">GetPosition</span><span class="p">().</span><span class="n">position</span><span class="p">;</span>
+        <span class="n">tkData</span><span class="p">.</span><span class="n">inputPorts</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">inputContainer</span><span class="p">.</span><span class="n">childCount</span> <span class="p">!=</span> <span class="m">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Grab all edges that connect to the input port</span>
+            <span class="n">Port</span> <span class="n">endPort</span> <span class="p">=</span> <span class="p">(</span><span class="n">Port</span><span class="p">)</span><span class="n">n</span><span class="p">.</span><span class="n">inputContainer</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+            <span class="n">List</span><span class="p">&lt;</span><span class="n">Edge</span><span class="p">&gt;</span> <span class="n">inputEdges</span> <span class="p">=</span> <span class="n">edges</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">input</span> <span class="p">==</span> <span class="n">endPort</span><span class="p">).</span><span class="nf">ToList</span><span class="p">();</span>
+
+            <span class="c1">// Write IDs of input ports</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="n">Edge</span> <span class="n">edge</span> <span class="k">in</span> <span class="n">inputEdges</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">Port</span> <span class="n">startPort</span> <span class="p">=</span> <span class="n">edge</span><span class="p">.</span><span class="n">output</span><span class="p">;</span>
+                <span class="n">Node</span> <span class="n">startNode</span> <span class="p">=</span> <span class="n">startPort</span><span class="p">.</span><span class="n">node</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">startPortIndex</span> <span class="p">=</span> <span class="n">startNode</span><span class="p">.</span><span class="n">outputContainer</span><span class="p">.</span><span class="nf">IndexOf</span><span class="p">(</span><span class="n">startPort</span><span class="p">);</span>
+                <span class="kt">string</span> <span class="n">startPortID</span> <span class="p">=</span> <span class="p">(</span><span class="n">startNode</span> <span class="k">as</span> <span class="n">TK_Node</span><span class="p">).</span><span class="n">portIDs</span><span class="p">[</span><span class="n">startPortIndex</span><span class="p">];</span>
+                <span class="n">tkData</span><span class="p">.</span><span class="n">inputPorts</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">startPortID</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="k">is</span> <span class="n">DialogNode</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Write dialogue event-specific parameters</span>
+            <span class="kt">var</span> <span class="n">dialogData</span> <span class="p">=</span> <span class="n">ScriptableObject</span><span class="p">.</span><span class="n">CreateInstance</span><span class="p">&lt;</span><span class="n">DialogNodeData</span><span class="p">&gt;();</span>
+            <span class="n">dialogData</span><span class="p">.</span><span class="n">nodeID</span> <span class="p">=</span> <span class="n">tkData</span><span class="p">.</span><span class="n">nodeID</span><span class="p">;</span>
+            <span class="n">dialogData</span><span class="p">.</span><span class="n">portIDs</span> <span class="p">=</span> <span class="n">tkData</span><span class="p">.</span><span class="n">portIDs</span><span class="p">;</span>
+            <span class="n">dialogData</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">tkData</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+            <span class="n">dialogData</span><span class="p">.</span><span class="n">inputPorts</span> <span class="p">=</span> <span class="n">tkData</span><span class="p">.</span><span class="n">inputPorts</span><span class="p">;</span>
+
+            <span class="kt">var</span> <span class="n">dialogNode</span> <span class="p">=</span> <span class="n">n</span> <span class="k">as</span> <span class="n">DialogNode</span><span class="p">;</span>
+            <span class="n">dialogData</span><span class="p">.</span><span class="n">dialogText</span> <span class="p">=</span> <span class="n">dialogNode</span><span class="p">.</span><span class="n">dialogText</span><span class="p">;</span>
+            <span class="n">dialogData</span><span class="p">.</span><span class="n">speakerText</span> <span class="p">=</span> <span class="n">dialogNode</span><span class="p">.</span><span class="n">speakerText</span><span class="p">;</span>
+            <span class="n">dialogData</span><span class="p">.</span><span class="n">leftPortrait</span> <span class="p">=</span> <span class="n">dialogNode</span><span class="p">.</span><span class="n">leftPortrait</span><span class="p">;</span>
+            <span class="n">dialogData</span><span class="p">.</span><span class="n">rightPortrait</span> <span class="p">=</span> <span class="n">dialogNode</span><span class="p">.</span><span class="n">rightPortrait</span><span class="p">;</span>
+
+            <span class="c1">// Save the data</span>
+            <span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">dialogData</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="c1">// The node is not a subclass</span>
+            <span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">tkData</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Create folder for nodes</span>
+    <span class="kt">string</span> <span class="n">assetName</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="nf">GetFileNameWithoutExtension</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="n">fileDir</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="nf">GetDirectoryName</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">IsValidFolder</span><span class="p">(</span><span class="n">fileDir</span> <span class="p">+</span> <span class="s">"/"</span> <span class="p">+</span> <span class="n">assetName</span> <span class="p">+</span> <span class="s">" Nodes"</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">CreateFolder</span><span class="p">(</span><span class="n">fileDir</span><span class="p">,</span> <span class="n">assetName</span> <span class="p">+</span> <span class="s">" Nodes"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Save all nodes to this folder</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="n">NodeData</span> <span class="n">n</span> <span class="k">in</span> <span class="n">dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">string</span> <span class="n">nodePath</span> <span class="p">=</span> <span class="n">fileDir</span> <span class="p">+</span> <span class="s">"/"</span> <span class="p">+</span> <span class="n">assetName</span> <span class="p">+</span> <span class="s">" Nodes/"</span> <span class="p">+</span> <span class="n">n</span><span class="p">.</span><span class="n">nodeID</span> <span class="p">+</span> <span class="s">".asset"</span><span class="p">;</span>
+        <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">DeleteAsset</span><span class="p">(</span><span class="n">nodePath</span><span class="p">);</span>
+        <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">CreateAsset</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nodePath</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Save the complete tree</span>
+    <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">DeleteAsset</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+    <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">CreateAsset</span><span class="p">(</span><span class="n">dialogTree</span><span class="p">,</span> <span class="n">filePath</span><span class="p">);</span>
+    <span class="n">AssetDatabase</span><span class="p">.</span><span class="nf">SaveAssets</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>This one is pretty straightforward: we start by creating a new instance of the <code class="language-plaintext highlighter-rouge">DialogTree</code> scriptable object. Then we make a new instance of <code class="language-plaintext highlighter-rouge">NodeData</code> for every node in the graph, filling in the appropriate fields. Unfortunately, you can’t just recast a scriptable object as a subclass, so dialogue nodes have to be declared as new <code class="language-plaintext highlighter-rouge">DialogNodeData</code> and filled in again, which is quite redundant.</p><p>After some more filename mangling, the script turns the Node Data into an asset and creates a folder for the Tree’s Nodes alongside it (if necessary), saving those as well.</p><h2 id="the-new-new-dialogue-system">The New New Dialogue System<a href="#the-new-new-dialogue-system" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2><p>I changed the way the game handles dialogue in the last devblog, and although I wouldn’t have been surprised to have to change it again, I did think it would last more than one update. Oh well.</p><p>As a refresher, each object that’s meant to be interactable has a Component called <code class="language-plaintext highlighter-rouge">InteractionData</code> attached to it. This used to contain a List of scriptable objects called <code class="language-plaintext highlighter-rouge">DialogEvent</code>s, but now all of the requisite data is stored in the Nodes of <code class="language-plaintext highlighter-rouge">DialogTree</code>s. So now the Tree is what the component contains; the old dialogue classes are outdated<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>.</p><p>Since Dialogue Trees are not necessarily straight lines, the Dialogue Controller needs a few extra functions to read them in place of simple Lists. It starts by locating the Start Node, which it does by finding the only Node in the tree with an empty <code class="language-plaintext highlighter-rouge">inputPorts</code> list. Then it runs two methods: <code class="language-plaintext highlighter-rouge">FindNextNode()</code> and <code class="language-plaintext highlighter-rouge">InterpretNode()</code>.</p><div file="DialogController.cs" class="language-c# highlighter-rouge"><div class="code-header"> <span label-text="DialogController.cs"><i class="far fa-file-code"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+</pre><td class="rouge-code"><pre><span class="k">private</span> <span class="n">NodeData</span> <span class="nf">FindNextNode</span><span class="p">(</span><span class="kt">string</span> <span class="n">outputPortID</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="n">NodeData</span> <span class="n">n</span> <span class="k">in</span> <span class="n">_dialogTree</span><span class="p">.</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">inputPorts</span><span class="p">.</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">inputPorts</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">outputPortID</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">void</span> <span class="nf">InterpretNode</span><span class="p">(</span><span class="n">NodeData</span> <span class="n">node</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">_activeNode</span> <span class="p">=</span> <span class="n">node</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="k">is</span> <span class="n">DialogNodeData</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">DialogNodeData</span> <span class="n">dialogNode</span> <span class="p">=</span> <span class="n">node</span> <span class="k">as</span> <span class="n">DialogNodeData</span><span class="p">;</span>
+        <span class="nf">ResolveDialogEvent</span><span class="p">(</span><span class="n">dialogNode</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">void</span> <span class="nf">ResolveDialogEvent</span><span class="p">(</span><span class="n">DialogNodeData</span> <span class="n">node</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Refresh portraits and speaker display, if applicable</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">leftPortrait</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_leftImage</span><span class="p">.</span><span class="n">sprite</span> <span class="p">=</span> <span class="n">node</span><span class="p">.</span><span class="n">leftPortrait</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">rightPortrait</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_rightImage</span><span class="p">.</span><span class="n">sprite</span> <span class="p">=</span> <span class="n">node</span><span class="p">.</span><span class="n">rightPortrait</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">speakerText</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">_speakerText</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">node</span><span class="p">.</span><span class="n">speakerText</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Display associated dialogue line</span>
+    <span class="n">advanceButton</span><span class="p">.</span><span class="nf">SetActive</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+    <span class="n">_dialogText</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">node</span><span class="p">.</span><span class="n">dialogText</span><span class="p">;</span>
+    <span class="n">_activeText</span> <span class="p">=</span> <span class="n">dialogTMP</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">TMP_Text</span><span class="p">&gt;();</span>
+    <span class="nf">StartCoroutine</span><span class="p">(</span><span class="nf">RevealByCharacter</span><span class="p">(</span><span class="n">_activeText</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Like the edge connector in the loading function, <code class="language-plaintext highlighter-rouge">FindNextNode()</code> works by attempting to match a given port ID (the output) to the node that has that ID in its list of input ports. <code class="language-plaintext highlighter-rouge">InterpretNode()</code> is a sort of junction method which determines the specific type of Node being read and passes it to the appropriate handling function<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup>.</p><p>After that point, the Controller functions as normal, excepting that the <code class="language-plaintext highlighter-rouge">Advance()</code> method also now needs to run <code class="language-plaintext highlighter-rouge">FindNextNode()</code> and <code class="language-plaintext highlighter-rouge">InterpretNode()</code>. The sequence ends when <code class="language-plaintext highlighter-rouge">FindNextNode()</code> returns a null value.</p><h2 id="conclusion">Conclusion<a href="#conclusion" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2><p>Given how long it took to whip this editor up, and how it (currently) only offers the same functionality as the previous dialogue system, it would be easy to claim that it was a waste of time. And maybe it was! Luckily, I’m an amateur, beholden to no deadlines or expectations but my own, and as long as I’m putting the effort in and learning new things, I can waste as much time as I please.</p><p>That’s not to say <em>I</em> think it was a waste, though. Complex, non-linear interactions were always a desired feature of this project, and before I started this task I hadn’t even considered how impossible they would be under the old system. Now, I think I’ve created a framework for these interactions that I genuinely look forward to using.</p><p>Next time: Menu talk! Once I can properly add and display a Case in the Cases Menu, I’ll be happy to go over all of that.</p><hr /><div class="footnotes" role="doc-endnotes"><ol><li id="fn:1" role="doc-endnote"><p>I mean, you can’t. NPCs won’t be implemented for a while. Man, it feels weird to talk about planned features in the present tense. But it also feels weird not to! Argh! <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p><li id="fn:2" role="doc-endnote"><p>For those unfamiliar with Unity, <strong>Scriptable Object</strong> is a class designed for data files. Instances of any class that derives from <code class="language-plaintext highlighter-rouge">ScriptableObject</code> can be created in the Editor with their own values without needing to be attached to game objects the way <code class="language-plaintext highlighter-rouge">MonoBehaviour</code>s do. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p><li id="fn:3" role="doc-endnote"><p>Because evidence and suspect profiles can also accrue Details, there’s a similar system in place for them. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p><li id="fn:4" role="doc-endnote"><p>Since it’s experimental, there’s no telling what’ll happen to it in future versions (for the record, I’m using 2020.3). I read they’re working on something else to replace it, but hopefully it’s similar enough for this post to still be helpful. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p><li id="fn:5" role="doc-endnote"><p>At some point I settled on spelling it “dialog” in code and “dialogue” elsewhere. I still don’t know why, but at least it’s consistent now. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p><li id="fn:6" role="doc-endnote"><p>As I write this, I’m realizing that there’s no safety system in place for prompting the user to deal with unsaved changes on an existing Tree before loading in a new one. See, blogging <em>is</em> a great way to review your own work! <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p><li id="fn:7" role="doc-endnote"><p>Like Details, nodes have to be represented as both a <code class="language-plaintext highlighter-rouge">ScriptableObject</code>-derived data class and another class (this time deriving from the GraphView library’s <code class="language-plaintext highlighter-rouge">Node</code> class) for actual use. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p><li id="fn:8" role="doc-endnote"><p>A funny story: for the longest time I was getting exceptions at this part, and had no idea why since the error was in pre-provided methods I couldn’t access. The mistake? I’d mixed up the definitions of <code class="language-plaintext highlighter-rouge">input</code> and <code class="language-plaintext highlighter-rouge">output</code> in the default Edge class! I thought “input” referred to the port at the <em>start</em> of the Edge (since that’s where the “input” half of things usually is), but instead it meant “the input port the edge is connected to”, which is at the <em>end</em>. <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p><li id="fn:9" role="doc-endnote"><p>Another thing I’m only catching on this review: it makes way more sense to do this check when the graph is saved as opposed to loaded. Probably not worth fixing, but worth pointing out. <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p><li id="fn:10" role="doc-endnote"><p>The Tree in <code class="language-plaintext highlighter-rouge">InteractionData</code> is labeled <code class="language-plaintext highlighter-rouge">openingTree</code>, since it’s possible interactions will involve multiple Trees, and this component only needs to reference the one that happens on first interaction. <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p><li id="fn:11" role="doc-endnote"><p>Again, the Editor only contains dialogue nodes at the moment, so there’s only one case implemented here. <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p></ol></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/gamedev/'>Gamedev</a>, <a href='/categories/hunchback/'>Hunchback</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/custom-editors/" class="post-tag no-text-decoration" >custom editors</a> <a href="/tags/graphview/" class="post-tag no-text-decoration" >graphview</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Hunchback Devlog #2: Who's Graphing Now? - Intermittent Games&url=https://spaceattorney.github.io/posts/hunchback-devlog-2-who-s-graphing-now/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Hunchback Devlog #2: Who's Graphing Now? - Intermittent Games&u=https://spaceattorney.github.io/posts/hunchback-devlog-2-who-s-graphing-now/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=Hunchback Devlog #2: Who's Graphing Now? - Intermittent Games&url=https://spaceattorney.github.io/posts/hunchback-devlog-2-who-s-graphing-now/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recent Update</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/side-projects-dungeon-upkeeper/">Side Projects: Dungeon Upkeeper</a><li><a href="/posts/hunchback-devlog-1-the-old-to-the-new/">Hunchback Devlog #1: The Old to the New</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/adhd/">adhd</a> <a class="post-tag" href="/tags/blogging/">blogging</a> <a class="post-tag" href="/tags/bright-memory-infinite/">bright memory infinite</a> <a class="post-tag" href="/tags/custom-editors/">custom editors</a> <a class="post-tag" href="/tags/death-s-door/">death's door</a> <a class="post-tag" href="/tags/demon-turf/">demon turf</a> <a class="post-tag" href="/tags/dungeon-upkeeper/">dungeon upkeeper</a> <a class="post-tag" href="/tags/elden-ring/">elden ring</a> <a class="post-tag" href="/tags/game-jam/">game jam</a> <a class="post-tag" href="/tags/graphview/">graphview</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/hunchback-devlog-0-new-year-new-game/"><div class="card-body"> <em class="timeago small" date="2022-01-29 02:41:00 -0600" >Jan 29</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Hunchback Devlog #0: New Year, New Game</h3><div class="text-muted small"><p> Hello, and welcome to the official blog of Intermittent Games. This is the first in a series of posts detailing my development of deductive adventure game Hunchback. I’m calling this post “#0” beca...</p></div></div></a></div><div class="card"> <a href="/posts/hunchback-devlog-1-the-old-to-the-new/"><div class="card-body"> <em class="timeago small" date="2022-02-09 03:16:00 -0600" >Feb 9</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Hunchback Devlog #1: The Old to the New</h3><div class="text-muted small"><p> As I mentioned in the last post, I spent a good chunk of last year working on an earlier form of this game. When I returned to it at the start of this year, I ported what I had done to a new projec...</p></div></div></a></div><div class="card"> <a href="/posts/side-projects-dungeon-upkeeper/"><div class="card-body"> <em class="timeago small" date="2022-01-30 01:47:00 -0600" >Jan 30</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Side Projects: Dungeon Upkeeper</h3><div class="text-muted small"><p> A Discord server I frequent has a lovely little channel called #workshop, in which people can post progress on, or ask for help with, any projects they’re working on. A few months ago, a fellow ama...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/games-i-played-february-2022/" class="btn btn-outline-primary" prompt="Older"><p>Games I Played: February-March 2022</p></a> <span class="btn btn-outline-primary disabled" prompt="Newer"><p>-</p></span></div><script src="https://utteranc.es/client.js" repo="SpaceAttorney/spaceattorney.github.io" issue-term="title" crossorigin="anonymous" async> </script> <script type="text/javascript"> $(function() { const origin = "https://utteranc.es"; const iframe = "iframe.utterances-frame"; const lightTheme = "github-light"; const darkTheme = "github-dark"; let initTheme = lightTheme; if ($("html[mode=dark]").length > 0 || ($("html[mode]").length == 0 && window.matchMedia("(prefers-color-scheme: dark)").matches)) { initTheme = darkTheme; } addEventListener("message", (event) => { let theme; /* credit to <https://github.com/utterance/utterances/issues/170#issuecomment-594036347> */ if (event.origin === origin) { /* page initial */ theme = initTheme; } else if (event.source === window && event.data && event.data.direction === ModeToggle.ID) { /* global theme mode changed */ const mode = event.data.message; theme = (mode === ModeToggle.DARK_MODE ? darkTheme : lightTheme); } else { return; } const message = { type: "set-theme", theme: theme }; const utterances = document.querySelector(iframe).contentWindow; utterances.postMessage(message, origin); }); }); </script></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center text-muted"><div class="footer-left"><p class="mb-0"> © 2022 <a href="https://twitter.com/Space_Attorney">Apogee</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/adhd/">adhd</a> <a class="post-tag" href="/tags/blogging/">blogging</a> <a class="post-tag" href="/tags/bright-memory-infinite/">bright memory infinite</a> <a class="post-tag" href="/tags/custom-editors/">custom editors</a> <a class="post-tag" href="/tags/death-s-door/">death's door</a> <a class="post-tag" href="/tags/demon-turf/">demon turf</a> <a class="post-tag" href="/tags/dungeon-upkeeper/">dungeon upkeeper</a> <a class="post-tag" href="/tags/elden-ring/">elden ring</a> <a class="post-tag" href="/tags/game-jam/">game jam</a> <a class="post-tag" href="/tags/graphview/">graphview</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script>
