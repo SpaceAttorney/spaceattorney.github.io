@@ -7,6 +7,7 @@ categories:
 tags:
 - umineko
 - the space between
+- spirit hunter death mark
 - tiny tina's wonderlands
 img_path: "/assets/img/post/2022/apr/roundup"
 ---
