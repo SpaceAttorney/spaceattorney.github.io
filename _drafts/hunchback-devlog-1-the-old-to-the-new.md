@@ -4,14 +4,17 @@ title: 'Hunchback Devlog #1: The Old to the New'
 categories:
 - Gamedev
 - Hunchback
-tags: [input system, singleton, unity events, textmeshpro]
+tags:
+- input system
+- singleton
+- unity events
+- textmeshpro
 img_path: "/assets/img/post/2022/feb/hunch1/"
 image:
   src: title.png
   width: 1280
   height: 523
   alt: A comparison of screenshots from the old and new projects
-date: 2022-02-09 03:16 -0600
 ---
 As I mentioned in [the last post]({% post_url 2022-01-29-hunchback-devlog-0-new-year-new-game %}), I spent a good chunk of last year working on an earlier form of this game. When I returned to it at the start of this year, I ported what I had done to a new project, partially because re-implementing every feature one by one served as a well-needed refresher on how the code actually worked (but mostly just to sate my mind goblins). Thanks to the process of setting this blog up, as well as the [Mini Jam]({% post_url 2022-01-30-side-projects-dungeon-upkeeper %}), it's now been a few weeks since I've touched the project, so as a second refresher I think it's time to go into how everything works so far.
 

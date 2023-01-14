@@ -13,7 +13,6 @@ tags:
 - unexplored
 - horizon zero dawn
 img_path: "/assets/img/post/2022/feb/roundup"
-date: 2022-04-07 00:03 -0500
 ---
 Welcome back to another roundup! I couldn't even make two in a row, wow! But fret not, dear reader: though I may have slacked on reviewing games, I in no way slacked on playing them. For those curious, the same holds true for _Hunchback_: I've been pretty hard at work on it, and once I reach my next goal I'll welcome the chance to switch gears and write a devblog about it. Stay tuned. For now, games!
 

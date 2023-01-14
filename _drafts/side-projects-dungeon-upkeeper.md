@@ -15,7 +15,6 @@ image:
   width: 982
   height: 556
   alt: Tutorial screen for Dungeon Upkeeper
-date: 2022-01-30 01:47 -0600
 ---
 A Discord server I frequent has a lovely little channel called #workshop, in which people can post progress on, or ask for help with, any projects they're working on. A few months ago, a fellow amateur dev there mentioned wanting to try a game jam at some point, and I (having at this point been several months removed from any work on _Hunchback_) asked him to let me know if he did. Cut to the weekend of 21 January, and [the 98th rendition](https://itch.io/jam/mini-jam-98-empty) of the biweekly 72-hour game jam [Mini Jam](https://minijamofficial.com/) begins. I and this person I've never met have three days to make a game. How do we do it?
 

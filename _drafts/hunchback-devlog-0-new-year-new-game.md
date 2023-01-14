@@ -9,7 +9,6 @@ tags:
 - blogging
 - adhd
 img_path: "/assets/img/post/2022/jan/hunch0/"
-date: 2022-01-29 02:41 -0600
 ---
 Hello, and welcome to the official blog of Intermittent Games. This is the first in a series of posts detailing my development of deductive adventure game _Hunchback_. I'm calling this post "#0" because it's mostly an introduction to the project on a conceptual level, and to the blog as a whole. In the next post, I'll go over all the work I did before starting this blog, and from that point on it will be live.
 
