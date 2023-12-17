@@ -13,6 +13,6 @@ order: 1
 For more details, please wait until I relaunch the devblog.
 
 ## The Person
-**Apogee** (known elsewhere as Space Attorney or BioApple) is a manufacturing associate by night and a mostly self-taught Unity developer, also by night. They have a degree in biomedical engineering and a minor in neuroscience, which they swear they will put to use one day. They have a keen academic interest in art and animation, though one look at the devblog will tell you they have not practiced in either. They read [Astral Codex Ten](https://astralcodexten.substack.com/) and wish they were smart enough to contribute to its community. Their favorite game is _Ghost Trick: Phantom Detective_.
+**Apogee** (known elsewhere as Space Attorney or BioApple) is a manufacturing associate by night and a mostly self-taught gamedev, also by night. They have a degree in biomedical engineering and a minor in neuroscience, which they swear they will put to use one day. They have a keen academic interest in art and animation, though one look at the devblog will tell you they have not practiced in either. They read [Astral Codex Ten](https://astralcodexten.substack.com/) and wish they were smart enough to contribute to its community. Their favorite game is _Ghost Trick: Phantom Detective_.
 
 If you wish to contact Apogee, please use Discord (Space Attorney #9678) or [Twitter](https://twitter.com/Space_Attorney).
